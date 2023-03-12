@@ -65,5 +65,16 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      # https://github.com/peter-evans/dockerhub-description
+      - name: Update Docker Hub Description
+        if: github.event_name != 'pull_request'
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ env.IMAGE_NAME }}
+          readme-filepath: ./README.md
+          short-description: "My custom Caddy builds"
+
       - name: Image digest
         run: echo ${{ steps.build-and-push.outputs.digest }}
