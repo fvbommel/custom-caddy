@@ -1,6 +1,6 @@
 FROM caddy:2-builder AS builder
 
-RUN xcaddy build v2.7.3 \
+RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
     --with github.com/fvbommel/caddy-combine-ip-ranges \
     --with github.com/fvbommel/caddy-dns-ip-range \
