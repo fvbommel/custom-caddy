@@ -70,7 +70,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: ${{ env.IMAGE_NAME }}
-          readme-filepath: ./README.md
           short-description: "My custom Caddy builds"
 
       - name: Image digest
