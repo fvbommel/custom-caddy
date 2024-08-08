@@ -5,8 +5,16 @@ on:
     - cron: "8 16 * * *"
   push:
     branches: ["main"]
+    paths-ignore:
+      - '.github/dependabot.yml'
+      - '.gitignore'
+      - 'LICENSE'
   pull_request:
     branches: ["main"]
+    paths-ignore:
+      - '.github/dependabot.yml'
+      - '.gitignore'
+      - 'LICENSE'
   workflow_dispatch:
 
 env:
