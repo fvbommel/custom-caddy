@@ -1,14 +1,31 @@
-FROM caddy:2-builder AS builder
+FROM golang:1-alpine AS builder
 
-RUN xcaddy build \
-    --with github.com/caddy-dns/cloudflare \
-    --with github.com/fvbommel/caddy-combine-ip-ranges \
-    --with github.com/fvbommel/caddy-dns-ip-range \
-    --with github.com/yroc92/postgres-storage \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip
+WORKDIR /src
 
+# Tell Go where its caches are.
+ENV GOMODCACHE=/go-mod-cache GOCACHE=/go-build-cache
+
+# Get module definition.
+COPY go.* ./
+
+# Update mod cache.
+RUN --mount=type=cache,target=/go-mod-cache \
+    go mod download
+
+# Get source code.
+COPY *.go ./
+
+# Compile, using mod cache and build cache.
+RUN --mount=type=cache,target=/go-mod-cache \
+    --mount=type=cache,target=/go-build-cache \
+    go build -v -o /caddy
+
+# Adapt the official Caddy image using the new binary.
 FROM caddy:2
 
-COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+COPY --from=builder /caddy /usr/bin/caddy
+
+# Allow using privileged ports without root.
+RUN setcap cap_net_bind_service=+ep /usr/bin/caddy
 
 CMD [ "caddy", "run", "--watch", "--config", "/etc/caddy/Caddyfile" ]
