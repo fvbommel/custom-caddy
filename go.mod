@@ -1,11 +1,11 @@
 module github.com/fvbommel/custom-caddy
 
 go 1.22.0
-toolchain go1.23.7
+toolchain go1.24.1
 
 require (
 	github.com/WeidiDeng/caddy-cloudflare-ip v0.0.0-20231130002422-f53b62aa13cb
-	github.com/caddy-dns/cloudflare v0.0.0-20240703190432-89f16b99c18e
+	github.com/caddy-dns/cloudflare v0.1.0
 	github.com/caddyserver/caddy/v2 v2.9.1
 	github.com/fvbommel/caddy-combine-ip-ranges v0.0.1
 	github.com/fvbommel/caddy-dns-ip-range v0.0.2
@@ -72,8 +72,8 @@ require (
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
 	github.com/lib/pq v1.10.9 // indirect
-	github.com/libdns/cloudflare v0.1.2-0.20240604123710-0549667a10ab // indirect
-	github.com/libdns/libdns v0.2.2 // indirect
+	github.com/libdns/cloudflare v0.1.3 // indirect
+	github.com/libdns/libdns v0.2.3 // indirect
 	github.com/manifoldco/promptui v0.9.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
