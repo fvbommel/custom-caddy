@@ -5,7 +5,7 @@ go 1.25
 require (
 	github.com/WeidiDeng/caddy-cloudflare-ip v0.0.0-20231130002422-f53b62aa13cb
 	github.com/caddy-dns/cloudflare v0.2.1
-	github.com/caddyserver/caddy/v2 v2.10.1
+	github.com/caddyserver/caddy/v2 v2.10.2
 	github.com/fvbommel/caddy-combine-ip-ranges v0.0.1
 	github.com/fvbommel/caddy-dns-ip-range v0.0.2
 	github.com/yroc92/postgres-storage v0.0.0-20230310195636-276797aefe40
