@@ -37,11 +37,6 @@ jobs:
             runner: ubuntu-24.04-arm
     runs-on: ${{ matrix.runner }}
     steps:
-      # https://github.com/depot/use-containerd-snapshotter-action
-      # This allows Github Actions caching without using buildx (which fails on ARM64)
-      - name: Use containerd snapshotter
-        uses: depot/use-containerd-snapshotter-action@v1.0.0
-
       # https://github.com/actions/checkout
       - name: Checkout repository
         uses: actions/checkout@v5
