@@ -32,6 +32,8 @@
 package main
 
 import (
+	_ "time/tzdata" // Bake time zone data into executable.
+
 	// Caddy and its default modules.
 	caddycmd "github.com/caddyserver/caddy/v2/cmd"
 	_ "github.com/caddyserver/caddy/v2/modules/standard"
