@@ -43,7 +43,6 @@ import (
 	_ "github.com/caddy-dns/cloudflare"
 	_ "github.com/fvbommel/caddy-combine-ip-ranges"
 	_ "github.com/fvbommel/caddy-dns-ip-range"
-	_ "github.com/yroc92/postgres-storage"
 )
 
 func main() {
