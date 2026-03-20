@@ -6,15 +6,15 @@ on:
   push:
     branches: ["main"]
     paths-ignore:
-      - '.github/dependabot.yml'
-      - '.gitignore'
-      - 'LICENSE'
+      - ".github/dependabot.yml"
+      - ".gitignore"
+      - "LICENSE"
   pull_request:
     branches: ["main"]
     paths-ignore:
-      - '.github/dependabot.yml'
-      - '.gitignore'
-      - 'LICENSE'
+      - ".github/dependabot.yml"
+      - ".gitignore"
+      - "LICENSE"
   workflow_dispatch:
 
 permissions:
