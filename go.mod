@@ -5,7 +5,7 @@ go 1.27.3
 require (
 	github.com/WeidiDeng/caddy-cloudflare-ip v0.0.0-20231130002422-f53b62aa13cb
 	github.com/caddy-dns/cloudflare v0.2.4
-	github.com/caddyserver/caddy/v2 v2.11.8
+	github.com/caddyserver/caddy/v2 v2.11.9
 	github.com/fvbommel/caddy-combine-ip-ranges v0.0.1
 	github.com/fvbommel/caddy-dns-ip-range v0.0.2
 )
